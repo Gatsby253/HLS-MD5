@@ -1,6 +1,6 @@
 TestBench: *md5_test.c*
 
-Source Files: *md5.c*, *md5_main.c*, ,*top.c*, *md5.h*
+Source Files: *md5.c*, *md5_main.c*, *top.c*, *md5.h*
 
 Note:
 

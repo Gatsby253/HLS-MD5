@@ -4,11 +4,13 @@ This *MD5_SDK_VIVADO_BD.tcl* is used for generating Vivado Block Design.
 
 2). Create a Block Design 
 
-2). In Vivado TCL Console `source path/MD5_SDK_VIVADO_BD.tcl` can generate the Block Design automatically
+3). In Vivado TCL Console `source path/MD5_SDK_VIVADO_BD.tcl` can generate the Block Design automatically
 
 
 *MD5_SDK_VIVADO_BD.tcl*用于生成Vivado的Block Design。
 
-1). 新建一个Block Design
+1).把HLS生成的MD5 IP核加入Vivado的IP仓库中
 
-2). 在Vivado的TCL Console输入`source path/MD5_SDK_VIVADO_BD.tcl` 即可自动生成Block Design
+2). 新建一个Block Design
+
+3). 在Vivado的TCL Console输入`source path/MD5_SDK_VIVADO_BD.tcl` 即可自动生成Block Design
