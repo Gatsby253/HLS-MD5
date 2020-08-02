@@ -26,7 +26,7 @@ MD5_SDK使用HLS在PL中实现MD5算法，使用SDK和C语言实现PS部分的�
 
 *ExecutableFiles*: *ExecutableFiles* contains two folders MD5_PYNQ and MD5_SDK. Floder *MD5_PYNQ* contains .bit file, .hwh fiel and .tcl files for Jupyter. Folder *MD5_SDK* contains .bit file and the SDK .elf file.
 
-*sourcecode*: *sourcecode*文件夹包含了项目的所有源代码。其中*MD5_PYNQ*文件夹和*MD5_SDK*文件夹分别包含了MD5_PYNQ和MD5_SDK的源代码。源代码包含HLS C/C++源文件、MD5_PYNQ的Jupyter文件、MD5_SDK的SDK C代码。这个文件夹中还有Vivado Block Design的tcl文件和一些测试数据。
+*Sourcecode*: *Sourcecode*文件夹包含了项目的所有源代码。其中*MD5_PYNQ*文件夹和*MD5_SDK*文件夹分别包含了MD5_PYNQ和MD5_SDK的源代码。源代码包含HLS C/C++源文件、MD5_PYNQ的Jupyter文件、MD5_SDK的SDK C代码。这个文件夹中还有Vivado Block Design的tcl文件和一些测试数据。
 
 *ExecutableFiles*: *ExecutableFiles*文件夹包含了*MD5_PYNQ*文件夹和*MD5_SDK*文件夹。*MD5_PYNQ*文件夹包含.bit, .hwh以及.tcl文件用于Jupyter。*MD5_SDK*文件夹包含了.bit文件以及SDK的.elf文件。
 
