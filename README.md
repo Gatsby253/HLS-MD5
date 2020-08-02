@@ -22,13 +22,13 @@ MD5_SDK使用HLS在PL中实现MD5算法，使用SDK和C语言实现PS部分的�
 - PYNQ-Z2 Boot Image V2.4 
 
 ## Contents
-*Sourcecode*: *Sourcecode* contains the source code of the project. *MD5_PYNQ* folder contains the source code of MD5_PYNQ and *MD5_SDK* folder contains the source code of MD5_SDK. The source files include HLS C/C++ code, Jupyter code for MD5_PYNQ and the SDK C code for MD5_SDK. *Sourcecode* also contains the Vivado Block Design .tcl file and some test data.
+*Sourcecode*: *Sourcecode* contains the source code of the project. *MD5_PYNQ* folder contains the source code of MD5_PYNQ and *MD5_SDK* folder contains the source code of MD5_SDK. The source files include HLS C/C++ code, Jupyter code for MD5_PYNQ and the SDK C code for MD5_SDK. *Sourcecode* also contains the Vivado Block Design `.tcl` file and some test data.
 
-*ExecutableFiles*: *ExecutableFiles* contains two folders MD5_PYNQ and MD5_SDK. Floder *MD5_PYNQ* contains .bit file, .hwh fiel and .tcl files for Jupyter. Folder *MD5_SDK* contains .bit file and the SDK .elf file.
+*ExecutableFiles*: *ExecutableFiles* contains two folders MD5_PYNQ and MD5_SDK. Floder *MD5_PYNQ* contains `.bit` file, `.hwh` fiel and `.tcl` files for Jupyter. Folder *MD5_SDK* contains `.bit` file and the SDK `.elf` file.
 
 *Sourcecode*: *Sourcecode*文件夹包含了项目的所有源代码。其中*MD5_PYNQ*文件夹和*MD5_SDK*文件夹分别包含了MD5_PYNQ和MD5_SDK的源代码。源代码包含HLS C/C++源文件、MD5_PYNQ的Jupyter文件、MD5_SDK的SDK C代码。这个文件夹中还有Vivado Block Design的tcl文件和一些测试数据。
 
-*ExecutableFiles*: *ExecutableFiles*文件夹包含了*MD5_PYNQ*文件夹和*MD5_SDK*文件夹。*MD5_PYNQ*文件夹包含.bit, .hwh以及.tcl文件用于Jupyter。*MD5_SDK*文件夹包含了.bit文件以及SDK的.elf文件。
+*ExecutableFiles*: *ExecutableFiles*文件夹包含了*MD5_PYNQ*文件夹和*MD5_SDK*文件夹。*MD5_PYNQ*文件夹包含`.bit`, `.hwh`以及`.tcl`文件用于Jupyter。*MD5_SDK*文件夹包含了`.bit`文件以及SDK的`.elf`文件。
 
 ## Examples
 - MD5_PYNQ input file: *Sourcecode/MD5_PYNQ/testdata/testdata1* 
