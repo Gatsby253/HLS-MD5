@@ -1,11 +1,11 @@
-HLS-MD5
-=======
+# HLS-MD5
+
 ![License](https://img.shields.io/github/license/Gatsby253/HLS-MD5) ![issues](https://img.shields.io/github/issues/Gatsby253/HLS-MD5)
 
 README: [English](https://github.com/Gatsby253/HLS-MD5/blob/master/README.md) | [中文](https://github.com/Gatsby253/HLS-MD5/blob/master/README-zh.md)
----
-This is the repository for HLS-MD5, which is a 2020 Xilinx Summer School project. The team is made up of 3 members. 
----
+
+**This is the repository for HLS-MD5, which is a 2020 Xilinx Summer School project. The team is made up of 3 members.**
+
 
 HLS-MD5 implements MD5 algorithm on FPGA using Vivado HLS. The porject contains two independent parts: MD5_PYNQ and MD5_SDK. Both MD5_PYNQ and MD5_SDK are implementations of MD5 algorithm on FPGA.
 
