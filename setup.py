@@ -1,83 +1,53 @@
-import numpy as np
-from pynq import Xlnk
-from pynq import Overlay
 import os
-import hashlib
-import time
+import shutil
+from distutils.dir_util import copy_tree
 
-#Download the MD5 IP bitstream
-MD5_Design = Overlay("./bitstream/MD5VIVADO.bit")
+from setuptools import find_packages, setup
 
-#Create DMA and MD5 IP objects.
-DMA = MD5_Design.axi_dma_0
-MD5 = MD5_Design.MD5_0
-#Check Status
-sendstatus = DMA.sendchannel.running
-recvstatus = DMA.recvchannel.running
-print("DMA Channel status: Send: ", sendstatus, " Recv: ", recvstatus)
+# project path in SD card & in github
+board_notebooks_dir = os.environ['PYNQ_JUPYTER_NOTEBOOKS']
+board_project_dir = os.path.join(board_notebooks_dir, 'MD5-HLS')
+repo_jupyter_folder = 'Sourcecode/MD5_PYNQ/Jupyter'
+repo_overlay_folder = 'ExecutableFiles/MD5_PYNQ'
+repo_testdata_folder = 'HLS-MD5/Sourcecode/MD5_PYNQ/testdata'
 
+# check whether board is supported
+board = os.environ['BOARD']
+if not board == 'Pynq-Z2':
+    raise ValueError("Board {} is not supported.".format(board))
+    
+# check if the path already exists, delete if so
+if os.path.exists(board_project_dir):
+    shutil.rmtree(board_project_dir)
+    
+# copy overlays
+src_ol_dir = os.path.join(repo_overlay_folder, 'MD5VIVADO.bit')
+dst_ol_dir = os.path.join(board_project_dir, 'bitstream/MD5VIVADO.bit')
+src_hwh_dir = os.path.join(repo_overlay_folder, 'MD5VIVADO.hwh')
+dst_hwh_dir = os.path.join(board_project_dir, 'bitstream/MD5VIVADO.hwh')
+src_tcl_dir = os.path.join(repo_overlay_folder, 'MD5VIVADO.tcl')
+dst_tcl_dir = os.path.join(board_project_dir, 'bitstream/MD5VIVADO.tcl')
+copy_tree(src_ol_dir, dst_ol_dir)
+copy_tree(src_hwh_dir, dst_hwh_dir)
+copy_tree(src_tcl_dir, dst_tcl_dir)
 
+# copy notebook
+src_nb_dir = os.path.join(repo_jupyter_folder, 'MD5.ipynb')
+dst_nb_dir = os.path.join(board_project_dir, 'MD5.ipynb')
+copy_tree(src_nb_dir, dst_nb_dir)
 
-#Load Data
+# copy testdata
+src_td_dir = os.path.join(repo_testdata_folder)
+dst_td_dir = os.path.join(board_project_dir, 'testdata')
+copy_tree(src_td_dir, dst_td_dir)
 
-#string
-#test_string = b"lpz7DrML70FVrHqv96NctqSMexImCCv4eozUEQvapLqvQGsEdtHDrUYz"
-#data_length = np.dtype(np.uint64)
-#data_length = len(test_string)
-#data_in = np.frombuffer(test_string,dtype = np.uint8)
-
-#file
-file_path = "./testdata/testdata1" 
-data_length = np.dtype(np.uint64)
-data_length = os.path.getsize(file_path)
-data_in = np.fromfile(file_path,dtype = np.uint8)
-
-#Write data length to MD5 module.
-len0 = np.dtype(np.uint32)
-len1 = np.dtype(np.uint32)
-len0 = data_length & 0x00000000FFFFFFFF
-len1 = (data_length>>32)& 0x00000000FFFFFFFF
-MD5.write(0x14, len0) #rows
-MD5.write(0x1c, len1) #cols
-
-
-
-#Allocate memory to process data on PL. Data is provided as contiguous memory blocks.
-xlnk = Xlnk()
-in_buffer = xlnk.cma_array(shape=(data_length,),dtype=np.uint8)
-out_buffer = xlnk.cma_array(shape=(4,),dtype=np.uint32)
-np.copyto(in_buffer,data_in)
-
-#Start the MD5 process and wait to complete.
-DMA.sendchannel.transfer(in_buffer)
-DMA.recvchannel.transfer(out_buffer)
-start1 = time.time()
-MD5.write(0x00,0x81) # start
-DMA.sendchannel.wait()
-DMA.recvchannel.wait()
-end1 = time.time()
-
-
-
-#Print MD5 Value and elapsed time: FPGA vs ARM CPU
-
-print("MD5 FPGA:")
-print('MD5:%08x%08x%08x%08x' % (out_buffer[0],out_buffer[1],out_buffer[2],out_buffer[3]))
-print("Time elapsed:%.8f ms." % ((end1-start1)*1000))
-
-hash_md5 = hashlib.md5()
-#string
-#start2 = time.time()
-#hash_md5.update(test_string)
-#end2 = time.time()
-
-#file
-start2 = time.time()
-with open(file_path,'rb') as f:
-    for chunk in iter(lambda: f.read(4096), b""):
-            hash_md5.update(chunk)
-end2 = time.time()
-
-print("MD5 ARM:")
-print("MD5:{}".format(hash_md5.hexdigest()))
-print("Time elapsed:%.8f ms." % ((end2-start2)*1000))
+setup(
+    name="MD5-HLS",
+    version='1.0',
+    install_requires=[
+        'pynq>=2.5',
+    ],
+    url='https://github.com/Gatsby253/HLS-MD5',
+    license='Apache-2.0 License',
+    packages=find_packages(),
+    description="An implementation of MD5 algorithm on FPGA using Vivado HLS")

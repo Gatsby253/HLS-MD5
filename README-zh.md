@@ -22,6 +22,12 @@ MD5_SDK使用HLS在PL中实现MD5算法，使用SDK和C语言实现PS部分的�
 
 *ExecutableFiles*: *ExecutableFiles*文件夹包含了*MD5_PYNQ*文件夹和*MD5_SDK*文件夹。*MD5_PYNQ*文件夹包含`.bit`, `.hwh`以及`.tcl`文件用于Jupyter。*MD5_SDK*文件夹包含了`.bit`文件以及SDK的`.elf`文件。
 
+## 快速开始
+在Jupyter Lab中打开终端，在终端中运行:
+
+`pip3 install git+https://github.com/Gatsby253/HLS-MD5.git`
+
+在Jupyter中打开文件夹*HLS-MD5*, 然后打开*MD5.ipynb*。点击"Cell->Run All"可以一次性顺序运行所有cell, 而点击"Run"按钮则可分别运行每个cell。
 ## 示例
 - MD5_PYNQ input file: *Sourcecode/MD5_PYNQ/testdata/testdata1* 
 <p align="center">

@@ -26,6 +26,12 @@ In MD5_SDK we utilize HLS to implement MD5 algorithm in the PL part and utilize 
 
 *ExecutableFiles*: *ExecutableFiles* contains two folders MD5_PYNQ and MD5_SDK. Floder *MD5_PYNQ* contains `.bit` file, `.hwh` fiel and `.tcl` files for Jupyter. Folder *MD5_SDK* contains `.bit` file and the SDK `.elf` file.
 
+## Quick Start
+Open a terminal in Jupyter Lab and run:
+
+`pip3 install git+https://github.com/Gatsby253/HLS-MD5.git`
+
+Open folder *HLS-MD5* in Jupyter, and open *MD5.ipynb*. This is the project's Jupyter Notebook. Click "Cell->Run All" to run all the cells sequentially, or click "Run" botton to run each cell individually.
 ## Examples
 - MD5_PYNQ input file: *Sourcecode/MD5_PYNQ/testdata/testdata1* 
 <p align="center">
