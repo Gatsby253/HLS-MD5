@@ -6,10 +6,10 @@ from setuptools import find_packages, setup
 
 # project path in SD card & in github
 board_notebooks_dir = os.environ['PYNQ_JUPYTER_NOTEBOOKS']
-board_project_dir = os.path.join(board_notebooks_dir, 'MD5-HLS')
+board_project_dir = os.path.join(board_notebooks_dir, 'HLS-MD5')
 repo_jupyter_folder = 'Sourcecode/MD5_PYNQ/Jupyter'
 repo_overlay_folder = 'ExecutableFiles/MD5_PYNQ'
-repo_testdata_folder = 'HLS-MD5/Sourcecode/MD5_PYNQ/testdata'
+repo_testdata_folder = 'Sourcecode/MD5_PYNQ/testdata'
 
 # check whether board is supported
 board = os.environ['BOARD']
@@ -45,7 +45,7 @@ setup(
     name="MD5-HLS",
     version='1.0',
     install_requires=[
-        'pynq>=2.5',
+        'pynq==2.4',
     ],
     url='https://github.com/Gatsby253/HLS-MD5',
     license='Apache-2.0 License',
