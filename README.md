@@ -6,6 +6,7 @@ README: [English](https://github.com/Gatsby253/HLS-MD5/blob/master/README.md) | 
 
 **This is the repository for HLS-MD5, which is a 2020 Xilinx Summer School project. The team is made up of 3 members.**
 
+**This repository is compatible with PYNQ image v2.4 for PYNQ-Z2.**
 
 HLS-MD5 implements MD5 algorithm on FPGA using Vivado HLS. The porject contains two independent parts: MD5_PYNQ and MD5_SDK. Both MD5_PYNQ and MD5_SDK are implementations of MD5 algorithm on FPGA.
 
@@ -32,6 +33,8 @@ Open a terminal in Jupyter Lab and run:
 `pip3 install git+https://github.com/Gatsby253/HLS-MD5.git`
 
 Open folder *HLS-MD5* in Jupyter, and open *MD5.ipynb*. This is the project's Jupyter Notebook. Click "Cell->Run All" to run all the cells sequentially, or click "Run" botton to run each cell individually.
+
+*The above operation requires your PYNQ-Z2 board to connect to the Internet. Please use an Ethernet cable to share the Internet with your PYNQ-Z2 board.*
 ## Examples
 - MD5_PYNQ input file: *Sourcecode/MD5_PYNQ/testdata/testdata1* 
 <p align="center">

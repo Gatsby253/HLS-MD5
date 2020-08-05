@@ -6,6 +6,8 @@ README: [English](https://github.com/Gatsby253/HLS-MD5/blob/master/README.md) | 
 
 **这是2020年新工科联盟-Xilinx暑期学校的项目，小组由3人组成。**
 
+**此项目与搭载PYNQ镜像版本2.4的PYNQ-Z2兼容**
+
 HLS-MD5使用Vivado HLS在FPGA上实现了MD5算法。HLS-MD5包含两个独立的部分MD5_PYNQ和MD5_SDK。MD5_PYNQ和MD5_SDK均为MD5算法在FPGA上的实现。
 ## MD5_PYNQ
 MD5_PYNQ使用HLS在PL中实现MD5算法，使用PYNQ框架中的Jupyter (Python3)实现PS部分的工作。输入的数据存放在Memory中，然后通过AXIS和DMA传入到PL。 
@@ -28,6 +30,8 @@ MD5_SDK使用HLS在PL中实现MD5算法，使用SDK和C语言实现PS部分的�
 `pip3 install git+https://github.com/Gatsby253/HLS-MD5.git`
 
 在Jupyter中打开文件夹*HLS-MD5*, 然后打开*MD5.ipynb*。点击"Cell->Run All"可以一次性顺序运行所有cell, 而点击"Run"按钮则可分别运行每个cell。
+
+*以上操作需要PYNQ-Z2板卡连接到Internet，请使用以太网线缆将PYNQ-Z2接入Internet.*
 ## 示例
 - MD5_PYNQ input file: *Sourcecode/MD5_PYNQ/testdata/testdata1* 
 <p align="center">
