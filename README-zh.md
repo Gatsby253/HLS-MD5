@@ -29,9 +29,10 @@ MD5_SDK使用HLS在PL中实现MD5算法，使用SDK和C语言实现PS部分的�
 
 `pip3 install git+https://github.com/Gatsby253/HLS-MD5.git`
 
+*以上操作需要PYNQ-Z2板卡连接到Internet，请使用以太网线缆将PYNQ-Z2接入Internet.*
+
 在Jupyter中打开文件夹*HLS-MD5*, 然后打开*MD5.ipynb*。点击"Cell->Run All"可以一次性顺序运行所有cell, 而点击"Run"按钮则可分别运行每个cell。
 
-*以上操作需要PYNQ-Z2板卡连接到Internet，请使用以太网线缆将PYNQ-Z2接入Internet.*
 ## 示例
 - MD5_PYNQ input file: *Sourcecode/MD5_PYNQ/testdata/testdata1* 
 <p align="center">

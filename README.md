@@ -32,9 +32,9 @@ Open a terminal in Jupyter Lab and run:
 
 `pip3 install git+https://github.com/Gatsby253/HLS-MD5.git`
 
-Open folder *HLS-MD5* in Jupyter, and open *MD5.ipynb*. This is the project's Jupyter Notebook. Click "Cell->Run All" to run all the cells sequentially, or click "Run" botton to run each cell individually.
-
 *The above operation requires your PYNQ-Z2 board to connect to the Internet. Please use an Ethernet cable to share the Internet with your PYNQ-Z2 board.*
+
+Open folder *HLS-MD5* in Jupyter, and open *MD5.ipynb*. This is the project's Jupyter Notebook. Click "Cell->Run All" to run all the cells sequentially, or click "Run" botton to run each cell individually.
 ## Examples
 - MD5_PYNQ input file: *Sourcecode/MD5_PYNQ/testdata/testdata1* 
 <p align="center">
